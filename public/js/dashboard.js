@@ -36,6 +36,28 @@ const newFormHandler = async (event) => {
       }
     }
   };
+
+  const commentHandler = async (event) => {
+    event.preventDefault();
+  
+    const comment = document.querySelector('#comment-add').value.trim();
+  
+    if (comment) {
+      const response = await fetch(`/api/blogs/${id}`, {
+        method: 'POST',
+        body: JSON.stringify({ comment }),
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      });
+  
+      if (response.ok) {
+        document.location.replace('/');
+      } else {
+        alert('Failed to create comment');
+      }
+    }
+  };
   
   document
     .querySelector('.new-project-form')
@@ -44,4 +66,8 @@ const newFormHandler = async (event) => {
   document
     .querySelector('.project-list')
     .addEventListener('click', delButtonHandler);
+
+  document
+    .querySelector('.add-comment')
+    .addEventListener('submit', commentHandler);
   
