@@ -9,7 +9,7 @@ In this assignment, we were asked to build a CMS-style blog where developers can
 
 The user should simply follow the below link to use this application.
 
-**********************include link to deployed app**************************
+https://quiet-fortress-09425-413d68bea053.herokuapp.com/
 
 
 ## Usage: 
